@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const Route = require('./routes')
 require('dotenv').config()
 const app = express()
+const PORT = process.env.PORT || 5000
 
 app.use(express.json())
 
@@ -22,6 +23,6 @@ db.once('open', function () {
 
 app.use(Router)
 
-app.listen(3001, () => {
+app.listen(PORT, () => {
     console.log('Server is running on port 3001')
 })
